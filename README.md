@@ -30,10 +30,24 @@ wget https://raw.githubusercontent.com/unmock/golang-example/master/__unmock__/g
 Run image, mounting `certs` and `__unmock__` folders you just prepared:
 
 ```bash
-docker run -v $(pwd)/certs:/app/certs -v $(pwd)/__unmock__:/app/__unmock__ unmock/unmock-server
+docker run -d --rm -p 8000:8000 -p 8008:8008 -p 8443:8443 -v $(pwd)/certs:/app/certs -v $(pwd)/__unmock__:/app/__unmock__ --name unmock-server unmock/unmock-server
 ```
 
 > Construction work ahead 👷‍♂️: Image currently expects to find `cert.pem` and `key.pem` in `certs/` folder. We're working on alternative ways to supply the certificate. We are also working on removing the need to supply a certificate if you're only using HTTP.
+
+### 4. Start making calls
+
+Make a call to `api.github.com` with `curl` using the proxy server:
+
+```bash
+https_proxy=http://localhost:8008 SSL_CERT_FILE=certs/cert.pem curl -i https://api.github.com/user/repos
+```
+
+### 5. Stop the container
+
+```bash
+docker stop unmock-server
+```
 
 ## Development
 
