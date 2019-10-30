@@ -57,8 +57,15 @@ Build image:
 ./build.sh
 ```
 
-Run image
+Run image:
 
 ```
 ./run.sh
+```
+
+Publish:
+
+```bash
+docker login
+docker push unmock/unmock-server:<tag>
 ```
