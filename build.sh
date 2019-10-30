@@ -1,1 +1,1 @@
-docker build -t unmock-server .
+docker build -t unmock/unmock-server .
