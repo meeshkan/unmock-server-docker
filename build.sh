@@ -1,1 +1,1 @@
-docker build -t unmock/unmock-server .
+docker build -t unmock/unmock-server --no-cache .
