@@ -29,7 +29,7 @@ To use Unmock with HTTPS, you need to
 
 1. Fetch the Unmock certificate used for signing the certificates
 
-   > `wget https://raw.githubusercontent.com/unmock/unmock-js/snicallback/packages/unmock-server/certs/ca.pem`
+   > `wget https://raw.githubusercontent.com/unmock/unmock-js/dev/packages/unmock-server/certs/ca.pem`
 
 1. Trust the certificate when using Unmock
 
