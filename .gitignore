@@ -1,2 +1,2 @@
-certs/
 __unmock__/
+ca.pem
