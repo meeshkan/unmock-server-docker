@@ -3,7 +3,7 @@ FROM node:dubnium
 WORKDIR /app
 
 # Checkout and build unmock-server
-RUN git clone --single-branch --branch snicallback https://github.com/unmock/unmock-js.git
+RUN git clone --single-branch --branch dev https://github.com/unmock/unmock-js.git
 RUN cd unmock-js && npm i && npm run compile
 
 # Prepare folders where to read services
